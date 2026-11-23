@@ -2,7 +2,7 @@ from funcoes import consulta,casdastro,editar,excluir
 
 while True:
     print("\n===-=-Painel-=-===\n")
-    print('[1]- Consultar Usuario')
+    print('[1]- Consultar Usuario(s)')
     print('[2]- Cadastrar Usuario')
     print('[3]- Editar Usuario')
     print('[4]- Excluir Usuario')

@@ -21,7 +21,7 @@ def casdastro():
     cursor = conexao.cursor()
     print("\n =-=-=-= CADASTRO =-=-=-=")
 
-    nome = input("Nome: ").capitalize()
+    nome = input("Nome: ").title()
     idade = input("Idade: ")
 
     while not idade.isdigit() or len(idade) > 3:
@@ -30,20 +30,20 @@ def casdastro():
 
     idade = int(idade)
 
-    pratica_atividade = input("Realiza atividade física? [Sim/Nao]: ").upper()
+    pratica_atividade = input("Realiza atividade física? [Sim/Nao]: ").capitalize()
 
-    while pratica_atividade not in ['SIM', 'NAO']:
+    while pratica_atividade not in ['Sim', 'Nao']:
         print("Digite apensas Sim ou Nao")
-        pratica_atividade = input("Realiza atividade física? [Sim/Nao]: ").upper()
+        pratica_atividade = input("Realiza atividade física? [Sim/Nao]: ").capitalize()
 
 
     qual_atividade = input("Qual atividade realiza? ").capitalize()
 
-    possui_dor = input("Possui dor? [Sim/Nao]: ").upper()
+    possui_dor = input("Possui dor? [Sim/Nao]: ").capitalize()
 
-    while possui_dor not in ['SIM', 'NAO']:
+    while possui_dor not in ['Sim', 'Nao']:
         print("Digite apensas Sim ou Nao")
-        possui_dor = input("Possui dor? [Sim/Nao]: ").upper()
+        possui_dor = input("Possui dor? [Sim/Nao]: ").capitalize()
 
 
     local_dor = input("Onde causa mais incômodo? ").capitalize()
@@ -106,7 +106,7 @@ def editar():
             return
 
         elif confirmar == "S":
-            novo_nome = input("Digite o nome: ").capitalize()
+            novo_nome = input("Digite o nome: ").title()
 
             comando = """
             UPDATE participantes
@@ -127,9 +127,9 @@ def editar():
             return
 
         elif confirmar == "S":
-            nova_atividade = input("Realiza atividade física? [Sim/Nao] ").upper()
+            nova_atividade = input("Realiza atividade física? [Sim/Nao] ").capitalize()
 
-            while nova_atividade not in ["SIM", "NAO"]:
+            while nova_atividade not in ["Sim", "Nao"]:
                 print("Digite apenas Sim ou Nao")
                 nova_atividade = input("Realiza atividade física? [Sim/Nao] ").upper()
 
@@ -177,11 +177,11 @@ def editar():
             return
 
         elif confirmar == "S":
-            nova_dor = input("Possui dor? [Sim/Nao] ").upper()
+            nova_dor = input("Possui dor? [Sim/Nao] ").capitalize()
 
-            while nova_dor not in ["SIM", "NAO"]:
+            while nova_dor not in ["Sim", "Nao"]:
                 print("Digite apenas Sim ou Nao")
-                nova_dor = input("Possui dor? [Sim/Nao] ").upper()
+                nova_dor = input("Possui dor? [Sim/Nao] ").capitalize()
 
         comando = """
         UPDATE participantes
@@ -202,7 +202,7 @@ def editar():
             return
 
         elif confirmar == "S":
-            novo_local = input("Onde causa mais incômodo? ").capitalize()
+            novo_local = input("Onde a dor causa mais incômodo? ").capitalize()
 
         comando = """
         UPDATE participantes
@@ -246,7 +246,7 @@ def excluir():
 
     while confirmar not in ['S', 'N']:
         print("Apenas S ou N")
-        confirmar = input("Realmente deseja alterar? [S/N] ").upper()
+        confirmar = input("Realmente deseja excluir? [S/N] ").upper()
 
     if confirmar == "N":
         cursor.close()
